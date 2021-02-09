@@ -1,0 +1,48 @@
+#include<stdio.h>
+int max(int a, int b);
+int min(int c, int d);
+int add(int e, int f);
+void process(int x,int y,int (*p)());
+int main()
+{
+    int a, b;
+    printf ("请输入整数两个数");
+    scanf ("%d %d",&a, &b);
+    printf ("max = ");
+    process(a,b,max);
+    printf ("\tmin = ");
+    process(a,b,min);
+    printf ("\tadd = ");
+    process(a,b,add);
+    return 0;
+}
+
+int max(int a, int b)           //实现比较两个数的大小，取大值
+{
+    int z;
+    if(a > b){
+        z = a;
+    }else z = b;
+    return z;
+}
+
+int min(int c,int d)            //实现比较两个数的大小，取小值
+{
+    int z;
+    if(c < d){
+        z = c;
+    }else z = d;
+    return z;
+}
+
+int add(int e, int f)          //实现两个数相加等于多少
+{
+    int z;
+    z = e+f;
+    return z;
+}
+
+void process(int x, int y, int (*p)())      //实现调用不同的功能
+{
+    printf("%d", p(x,y));
+}
