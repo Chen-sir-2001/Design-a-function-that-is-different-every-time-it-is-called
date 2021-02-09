@@ -44,5 +44,5 @@ int add(int e, int f)          //实现两个数相加等于多少
 
 void process(int x, int y, int (*p)())      //实现调用不同的功能
 {
-    printf("%d", p(x,y));
+    printf("%d", p(x,y));                这里也可写成（*p）（x, y）
 }
